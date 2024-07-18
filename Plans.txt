@@ -1,0 +1,41 @@
+1. Discuss their insights in data and future of data
+2. Their tack stack
+3. Wait for project and learning or develop realtime solutions and project meanwhile as POCs
+4.  A session on thames water data implementation and best practices, services they utilize - a demo solution like that 
+
+Phase 01
+Overview Outline for above mentioned topics and could be used in future projects ( SQL, Azure( ADLS, Data factory, Databases, Data bricks), PySpark )
+Introduction, Basics
+Data Mesh
+Use cases,
+Integration Best Practices ( e.g integrating ADLS / Database with data bricks)
+ADLS for structured/unstructured/Stream data
+
+az storage container generate-sas \
+    --account-name crimestorage \
+    --name crimedata \
+    --permissions acdlrw \
+    --expiry 2024-07-03T23:59:59Z \
+    --auth-mode login \
+    --as-user
+
+psql "--host=demo-project-server.postgres.database.azure.com" "--port=5432" "--dbname=postgres" "--username=haseebullah" "--set=sslmode=require"
+nadeem [ ~ ]$ psql "--host=demo-project-server.postgres.database.azure.com" "--port=5432" "--dbname=postgres" "--username=haseebullah" "--set=sslmode=require"
+Password for user haseebullah: 
+
+db
+Shaikh@321
+https://docs.microsoft.com/en-us/azure/data-factory/managed-virtual-network-private-endpoint; https://docs.microsoft.com/en-us/azure/data-factory/tutorial-copy-data-portal-private;
+Cannot connect to SQL Database: 'citibike-db.database.windows.net', Database: 'citibike_database', Reason: Connection was denied since Deny Public Network Access is set to Yes. To connect to this server, 1. If you persist public network access disabled, please use Managed Virtual Network IR and create private endpoint. https://docs.microsoft.com/en-us/azure/data-factory/managed-virtual-network-private-endpoint; https://docs.microsoft.com/en-us/azure/data-factory/tutorial-copy-data-portal-private; 2. Otherwise you can enable public network access, set "Public network access" option to "Selected networks" on Auzre SQL Networking setting.
+
+SAS URI: 
+"se=2024-05-09T23%3A59%3A59Z&sp=racwdl&sv=2022-11-02&sr=c&skoid=6ce14c34-26fb-480c-9c59-6133ae9356c2&sktid=b9fd44d2-8e41-4837-bc06-e03781f574af&skt=2024-05-03T15%3A15%3A32Z&ske=2024-05-09T23%3A59%3A59Z&sks=b&skv=2022-11-02&sig=iHq6xpEoJTmUgGI84O34gz4HhgFFJWNMISTRsBrSe3o%3D"
+
+
+Phase 02
+Data bricks for structured/unstructured/Stream data - Incremental modeling, auto loader basics, Medallion Architecture (Bronze, Silver and Gold Layer)
+Data Mesh (Modern data engineering and analytics), Its implementation in data bricks.
+Databricks cluster and driver best practices based on workloads 
+Database (Indexes, Store Procedures, Functions, window functions  (row_number, rank and other 2-3 commonly used wind func)
+PySpark (Broadcast, Shuffling and other memory related functions for optimization and best practices)
+Note: You don't need to cover all above till Wednesday, We will cover these gradually but based on my experience  with Thames Project. These are most important and every Azure data engineer should have expertise in above
